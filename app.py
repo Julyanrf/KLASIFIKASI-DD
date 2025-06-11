@@ -77,19 +77,6 @@ with st.form("form_pasien"):
             hemo_float = float(Hemoglobin.replace(",", "."))
             hemato_float = float(Hematokrit.replace(",", "."))
 
-            if hemo_float > 30 or hemato_float < 20 or hemato_float > 60 or hemo_float < 5:
-                st.error("Nilai Hemoglobin atau Hematokrit tampak tidak masuk akal. Periksa kembali input.")
-                st.stop()
-            elif hemo_float > hemato_float:
-                st.warning("Hemoglobin lebih besar dari Hematokrit. Ini tidak wajar. Kemungkinan nilai tertukar.")
-                lanjutkan = st.checkbox("Saya yakin data Hemoglobin dan Hematokrit sudah benar")
-                if not lanjutkan:
-                    st.info("Silakan periksa kembali data sebelum melanjutkan prediksi.")
-                    st.stop()
-        except ValueError:
-            # Handle cases where input is not a valid number
-             st.warning("Masukkan nilai numerik yang valid untuk Hemoglobin dan Hematokrit.")
-
 
     submitted = st.form_submit_button("Prediksi")
 

@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import joblib
@@ -77,14 +78,14 @@ with st.form("form_pasien"):
             hemo_float = float(Hemoglobin.replace(",", "."))
             hemato_float = float(Hematokrit.replace(",", "."))
 
+    submitted = st.form_submit_button("Prediksi")
 
-    with st.form("form_prediksi"):
+if submitted:
     try:
-        # beberapa kode prediksi
-        submitted = st.form_submit_button("Prediksi")
-    except Exception as e:
-        st.error(f"Terjadi kesalahan: {e}")
-
+        # These conversions should happen *after* the form is submitted and *inside* the try block
+        # to ensure the validation inside the form doesn't try to convert empty strings or invalid inputs
+        Hemoglobin_float = float(Hemoglobin.replace(",", "."))
+        Hematokrit_float = float(Hematokrit.replace(",", "."))
 
 
         Demam_val = 1 if Demam.lower() in ['ya', '1'] else 0

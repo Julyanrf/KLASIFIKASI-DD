@@ -79,6 +79,8 @@ with st.form("form_pasien"):
             hemato_float = float(Hematokrit.replace(",", "."))
 
     submitted = st.form_submit_button("Prediksi")
+    except Exception as e:
+    st.error(f"Terjadi kesalahan: {e}")
 
 if submitted:
     try:

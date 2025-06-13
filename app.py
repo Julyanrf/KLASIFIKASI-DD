@@ -79,6 +79,8 @@ with st.form("form_pasien"):
             hemato_float = float(Hematokrit.replace(",", "."))
         except ValueError:
             st.warning("Nilai Hemoglobin dan Hematokrit harus berupa angka.")
+     
+    submitted = st.form_submit_button("Prediksi")
 
 if submitted:
     try:

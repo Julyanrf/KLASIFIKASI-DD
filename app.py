@@ -80,13 +80,6 @@ with st.form("form_pasien"):
 
     submitted = st.form_submit_button("Prediksi")
 
-if submitted:
-    try:
-        # These conversions should happen *after* the form is submitted and *inside* the try block
-        # to ensure the validation inside the form doesn't try to convert empty strings or invalid inputs
-        Hemoglobin_float = float(Hemoglobin.replace(",", "."))
-        Hematokrit_float = float(Hematokrit.replace(",", "."))
-
 
         Demam_val = 1 if Demam.lower() in ['ya', '1'] else 0
         Pendarahan_val = 1 if Pendarahan.lower() in ['ya', '1'] else 0

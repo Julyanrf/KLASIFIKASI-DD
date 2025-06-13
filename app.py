@@ -77,6 +77,8 @@ with st.form("form_pasien"):
             # Or, handle the string comparison logic if preferred
             hemo_float = float(Hemoglobin.replace(",", "."))
             hemato_float = float(Hematokrit.replace(",", "."))
+        except ValueError:
+            st.warning("Nilai Hemoglobin dan Hematokrit harus berupa angka.")
 
 if submitted:
     try:

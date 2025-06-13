@@ -78,10 +78,6 @@ with st.form("form_pasien"):
             hemo_float = float(Hemoglobin.replace(",", "."))
             hemato_float = float(Hematokrit.replace(",", "."))
 
-    submitted = st.form_submit_button("Prediksi")
-    except Exception as e:
-    st.error(f"Terjadi kesalahan: {e}")
-
 if submitted:
     try:
         # These conversions should happen *after* the form is submitted and *inside* the try block

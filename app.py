@@ -78,7 +78,13 @@ with st.form("form_pasien"):
             hemato_float = float(Hematokrit.replace(",", "."))
 
 
-    submitted = st.form_submit_button("Prediksi")
+    with st.form("form_prediksi"):
+    try:
+        # beberapa kode prediksi
+        submitted = st.form_submit_button("Prediksi")
+    except Exception as e:
+        st.error(f"Terjadi kesalahan: {e}")
+
 
 
         Demam_val = 1 if Demam.lower() in ['ya', '1'] else 0
